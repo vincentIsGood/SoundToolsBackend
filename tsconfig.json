@@ -1,0 +1,12 @@
+{
+    "compilerOptions": {
+        "incremental": true,
+        "module": "NodeNext",
+        "moduleResolution": "node",
+        "target": "ES2020",
+        "sourceMap": true,
+        "allowJs": true,
+        "outDir": "build",
+    },
+    "include": ["src/**/*"],
+}

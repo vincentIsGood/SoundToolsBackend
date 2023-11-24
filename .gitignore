@@ -1,0 +1,14 @@
+# Personal notes
+0_*
+!0_tools/tools.md
+
+# Credentials
+.certs/*.crt
+.certs/*.key
+
+# Project stuff
+node_modules/
+dist/
+build/
+temp/
+sessions/

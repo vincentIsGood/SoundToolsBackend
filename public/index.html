@@ -1,0 +1,26 @@
+<html>
+    <body>
+        <input class="file" type="file" name="audiofile" accept="audio/mp3, audio/wav">
+        <input class="submit" type="submit" name="submit">
+    </body>
+    <script>
+        document.querySelector(".submit").addEventListener("click", ()=>{
+            /**
+             * @type {File}
+             */
+            const file = document.querySelector(".file").files[0];
+            fetch("/soundtools/v1/vocalremover", {
+                method: "POST",
+                headers: {
+                    "Content-Type": file.type,
+                },
+                body: file,
+            });
+        });
+
+        const ws = new WebSocket("ws://127.0.0.1:8080/soundtools/v1/vocalremover");
+        ws.addEventListener("message", (msg)=>{
+            console.log(msg.data);
+        });
+    </script>
+</html>
